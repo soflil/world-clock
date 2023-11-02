@@ -24,6 +24,19 @@ function timeDateData() {
     istanbulDateElement.innerHTML = istanbulDate;
     istanbulTimeElement.innerHTML = istanbulTime;
   }
+
+  let samoaDate = moment().tz("Pacific/Samoa").format("Do MMMM YYYY");
+  let samoaTime = moment()
+    .tz("Pacific/Samoa")
+    .format("h:mm:ss [<small>]A[</small>]");
+
+  let samoaElement = document.querySelector("#samoa");
+  if (samoaElement) {
+    let samoaDateElement = samoaElement.querySelector(".date");
+    let samoaTimeElement = samoaElement.querySelector(".time");
+    samoaDateElement.innerHTML = samoaDate;
+    samoaTimeElement.innerHTML = samoaTime;
+  }
 }
 
 timeDateData();
@@ -47,7 +60,7 @@ function changeCity(event) {
             "h:mm:ss [<small>]A[</small>]"
           )}</div>
         </div>
-        <a href="index.html">⬅ Back to all cities</a>`;
+        <a href="index.html">⬅ Back to homepage</a>`;
 }
 
 let citySelect = document.querySelector("#select-city");
